@@ -1,0 +1,4 @@
+[submodule "Documents"]
+	path = docs
+	url = git@github.com:kije/BeanTresor-Documents.git
+	branch = master
