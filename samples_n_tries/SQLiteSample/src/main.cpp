@@ -1,8 +1,6 @@
 #include <iostream>
-extern "C" {
-    #include "sqlite3.h"
-}
-#include <string>
+// #include <string>
+#include "lib/sqlite-amalgamation/sqlite3.h"
 
 using namespace std;
 
@@ -43,14 +41,18 @@ int main(int argc, char **argv) {
 
     string cmd;
 
+
+
     while (true) {
         cout << "Enter Command: " << endl;
         getline(cin, cmd);
 
-        if ("exit" == cmd) {
+        if (cmd.compare("exit") == 0) {
             break;
-        } else if ("help" == cmd) {
-            cout << "Commands:" << endl << "exit\t\tExit this programm." << endl << "help\t\tShows this information" << endl << endl;
+        } else if (cmd.compare("help") == 0) {
+            cout << "Commands:" << endl << "exit\t\tExit this programm." << endl <<
+                    "help\t\tShows this information" << endl <<
+                    endl;
         } else {
             execute_sql_command(cmd, db);
         }
